@@ -2,6 +2,9 @@
 #include <cstdlib>
 #include <iostream>
 
+//cards.cpp is for all the member functions definitions in cards.h
+
+
 /*
  You might or might not need these two extra libraries
  #include <iomanip>
@@ -110,12 +113,16 @@ string Card::get_spanish_rank() const {
 // Accessor: returns a string with the suit of the card in English
 // This is just a stub! Modify it to your liking.
 string Card::get_english_suit() const {
+    string english_suit;
+    if ( suit == "OROS")
+    { english_suit = "cups";}
     return "";
 }
 
 // Accessor: returns a string with the rank of the card in English
 // This is just a stub! Modify it to your liking.
 string Card::get_english_rank() const {
+    string english_rank;
     return "";
 }
 

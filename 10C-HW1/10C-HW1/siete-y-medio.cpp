@@ -1,3 +1,4 @@
+// where int main() will be
 #include <iostream>
 #include <fstream>
 #include <string>
@@ -5,6 +6,7 @@
 #include <ctime>
 #include <cstdlib>
 #include "cards.h"
+
 using namespace std;
 
 // Global constants (if any)
@@ -18,6 +20,6 @@ using namespace std;
 
 // Stub for main
 int main(){
-    /* --STATEMENTS-- */
+    
     return 0;
 }
