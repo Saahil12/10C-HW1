@@ -1,6 +1,6 @@
 // where int main() will be
 #include <iostream>
-#include <fstream>
+#include <fstream> //for txt file
 #include <string>
 #include <vector>
 #include <ctime>
@@ -10,7 +10,8 @@
 using namespace std;
 
 // Global constants (if any)
-
+int money = 100;
+Player p1(100);
 
 // Non member functions declarations (if any)
 
@@ -19,7 +20,23 @@ using namespace std;
 
 
 // Stub for main
-int main(){
+int main()
+{
+    bool more = true;
+    while (more)
+    {
+        int bet;
+        cout << "You have $" << p1.get_money() << ". Enter bet: ";
+        cin >> bet;
+        
+        
+        
+        
+        if (money <=0)
+        {
+            more = false;
+        }
+    }
     
     return 0;
 }

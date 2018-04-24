@@ -77,6 +77,8 @@ public:
     Player(int m);
     
     // You decide what functions you'll need...
+    int get_money() const;
+    void change_money(int n);
     
 private:
     int money;
