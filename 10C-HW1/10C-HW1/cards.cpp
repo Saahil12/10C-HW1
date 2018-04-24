@@ -114,16 +114,42 @@ string Card::get_spanish_rank() const {
 // This is just a stub! Modify it to your liking.
 string Card::get_english_suit() const {
     string english_suit;
-    if ( suit == "OROS")
-    { english_suit = "cups";}
-    return "";
+    if (suit == OROS)
+        {english_suit = "coins";}
+    else if (suit == COPAS )
+        {english_suit = "cups";}
+    else if (suit == BASTOS)
+        {english_suit = "clubs";}
+    else if (suit == ESPADAS)
+        {english_suit = "swords";}
+    return english_suit;
 }
 
 // Accessor: returns a string with the rank of the card in English
 // This is just a stub! Modify it to your liking.
 string Card::get_english_rank() const {
     string english_rank;
-    return "";
+    if (rank == AS)
+        {english_rank = "Ace";}
+    else if (rank == DOS)
+        {english_rank = "Two";}
+    else if (rank == TRES)
+        {english_rank = "Three";}
+    else if (rank == CUATRO)
+        {english_rank = "Four";}
+    else if (rank == CINCO)
+        {english_rank = "Five";}
+    else if (rank == SEIS)
+        {english_rank = "Six";}
+    else if (rank == SIETE)
+        {english_rank = "Seven";}
+    else if (rank == SOTA)
+        {english_rank = "Jack";}
+    else if (rank == CABALLO)
+        {english_rank = "Knight";}
+    else if (rank == REY)
+        {english_rank = "King";}
+    return english_rank;
 }
 
 
