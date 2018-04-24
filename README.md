@@ -1,2 +1,4 @@
 # HW1
-Learning how to use github. How will this edit of README.md show on github?
+
+##Goal:
+To familiarize myself with a version control software, git, while implementing a single player version card game, *siete y medio*
