@@ -1,6 +1,6 @@
 // where int main() will be
 #include <iostream>
-#include <fstream> //for txt file
+#include <fstream> //for gamelog.txt file
 #include <string>
 #include <vector>
 #include <ctime>
@@ -12,6 +12,8 @@ using namespace std;
 // Global constants (if any)
 int money = 100;
 Player p1(100);
+Hand player();
+Hand dealer();
 
 // Non member functions declarations (if any)
 
@@ -28,6 +30,15 @@ int main()
         int bet;
         cout << "You have $" << p1.get_money() << ". Enter bet: ";
         cin >> bet;
+        if (bet > p1.get_money())
+        {
+            cout << "Not Possible! Enter bet: ";
+            cin >> bet;
+        }
+        cout << "Your cards:" << endl;
+        
+        
+        
         
         
         

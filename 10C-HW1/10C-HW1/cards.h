@@ -61,15 +61,20 @@ private:
 class Hand {
 public:
     // A vector of Cards
-    Hand();
+    Hand(Card c);
     
     // You decide what functions you'll need...
-    
+    // keep track of what cards you have in current hand
+    void return_first_card() const;
+    void return_cards() const;
+    string new_card(Card c1);
 private:
     // You decide what fields you'll need...
+    string first_card;
+    vector <string> cards;
 };
 
-
+//Just need to keep track of the amount of money a player has
 class Player {
 public:
     // Constructor.
