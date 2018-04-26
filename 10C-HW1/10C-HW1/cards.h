@@ -66,8 +66,8 @@ public:
     // You decide what functions you'll need...
     // keep track of what cards you have in current hand
     void return_first_card() const;
+    void new_card();
     void return_cards() const;
-    string new_card(Card c1);
 private:
     // You decide what fields you'll need...
     string first_card;

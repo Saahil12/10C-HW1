@@ -182,14 +182,23 @@ Hand::Hand()
 
 void Hand::return_first_card() const
 {
-    cout << right << setw(40) << first_card << endl;
+    cout << setfill(' ') << setw(44) << first_card << endl;
+}
+
+void Hand::new_card()
+{
+    Card c;
+    string new_card;
+    new_card = c.get_spanish_rank() + " de " + c.get_spanish_suit() + "        (" + c.get_english_rank() + " of " + c.get_english_suit() + ")";
+    cards.push_back(new_card);
+    cout << setfill(' ') << setw(44) << new_card << endl;
 }
 
 void Hand::return_cards() const
 {
     for (int i=0; i<cards.size(); i++)
     {
-        cout << right << setw(40) << cards[i] << endl;
+        cout << setfill(' ') << setw(44) << cards[i] << endl;
     }
 }
 
