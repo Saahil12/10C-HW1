@@ -12,8 +12,7 @@ using namespace std;
 // Global constants (if any)
 int money = 100;
 Player p1(100);
-Hand player();
-Hand dealer();
+Hand player;
 
 // Non member functions declarations (if any)
 
@@ -36,6 +35,9 @@ int main()
             cin >> bet;
         }
         cout << "Your cards:" << endl;
+        player.return_first_card();
+        
+        
         
         
         

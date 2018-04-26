@@ -61,7 +61,7 @@ private:
 class Hand {
 public:
     // A vector of Cards
-    Hand(Card c);
+    Hand();
     
     // You decide what functions you'll need...
     // keep track of what cards you have in current hand
