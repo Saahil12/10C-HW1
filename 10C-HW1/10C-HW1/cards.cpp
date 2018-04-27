@@ -1,7 +1,6 @@
 #include "cards.h"
 #include <cstdlib>
 #include <iostream>
-#include <iomanip>
 
 //cards.cpp is for all the member functions definitions in cards.h
 
@@ -9,6 +8,7 @@
 /*
  You might or might not need these two extra libraries
  #include <algorithm>
+ #include <iomanip>
  */
 
 
@@ -178,11 +178,16 @@ Hand::Hand()
     first_card = c.get_spanish_rank() + " de " + c.get_spanish_suit() + "        (" + c.get_english_rank() + " of " + c.get_english_suit() + ")";
     
     cards.push_back(first_card);
+    
+    int x = c.get_rank();
+    
+    total = calc_value(x);
+    
 }
 
 void Hand::return_first_card() const
 {
-    cout << setfill(' ') << setw(44) << first_card << endl;
+    cout << "        " << first_card << endl;
 }
 
 void Hand::new_card()
@@ -191,15 +196,20 @@ void Hand::new_card()
     string new_card;
     new_card = c.get_spanish_rank() + " de " + c.get_spanish_suit() + "        (" + c.get_english_rank() + " of " + c.get_english_suit() + ")";
     cards.push_back(new_card);
-    cout << setfill(' ') << setw(44) << new_card << endl;
+    cout << "        " << new_card << endl;
 }
 
 void Hand::return_cards() const
 {
     for (int i=0; i<cards.size(); i++)
     {
-        cout << setfill(' ') << setw(44) << cards[i] << endl;
+        cout << "        " << cards[i] << endl;
     }
+}
+
+void Hand::return_total() const
+{
+    cout << total;
 }
 
 
