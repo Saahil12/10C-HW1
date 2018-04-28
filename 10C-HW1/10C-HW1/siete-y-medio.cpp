@@ -18,15 +18,6 @@ int bet;
 char c;
 
 // Non member functions declarations (if any)
-double calc_value(int x)
-{
-    double value = 0.0;
-    if (x <=7)
-        {value = x; }
-    if (x > 7)
-        {value = 0.5; }
-    return value;
-}
 
 // Non member functions implementations (if any)
 
@@ -49,7 +40,7 @@ int main()
     
     while (more)
     {
-        cout << "Your total is" << " ." << "Do you want another card (y/n)? ";
+        cout << "Your total is " << player.return_total() << ". Do you want another card (y/n)? ";
         cin >> c;
         if ( c != 'y')
             {more = false;}
@@ -69,10 +60,10 @@ int main()
     
     while (more2)
     {
-        cout << "The dealer's total is ." << endl;
-        if ( /* total */ > 5.5)
+        cout << "The dealer's total is " << dealer.return_total() << "." << endl;
+        cout << "\n";
+        if ( dealer.return_total() > 5.5)
             {more2 = false;}
-        
         else
         {
             cout << "New card:" << endl;
@@ -82,8 +73,22 @@ int main()
             dealer.return_cards();
         }
     }
-        
     
+    if (player.return_total() < dealer.return_total() && player.return_total() <= 7.5)
+    {
+        cout << "You win " << bet << "." << endl;
+        cout << "\n";
+    }
+    else if (player.return_total() == dealer.return_total() && player.return_total() <= 7.5)
+    {
+        cout << "Nobody wins!" << endl;
+        cout << "\n";
+    }
+    else
+    {
+        cout << "Too bad. You lose " << bet << "." << endl;
+        cout << "\n";
+    }
     
     return 0;
 }

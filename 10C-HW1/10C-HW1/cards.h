@@ -68,11 +68,12 @@ public:
     void return_first_card() const;
     void new_card();
     void return_cards() const;
-    void return_total() const;
+    double calc_value(int x);
+    double return_total() const;
     
 private:
     // You decide what fields you'll need...
-    int total;
+    double total;
     string first_card;
     vector <string> cards;
 };

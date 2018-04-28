@@ -178,11 +178,8 @@ Hand::Hand()
     first_card = c.get_spanish_rank() + " de " + c.get_spanish_suit() + "        (" + c.get_english_rank() + " of " + c.get_english_suit() + ")";
     
     cards.push_back(first_card);
-    
     int x = c.get_rank();
-    
     total = calc_value(x);
-    
 }
 
 void Hand::return_first_card() const
@@ -197,6 +194,9 @@ void Hand::new_card()
     new_card = c.get_spanish_rank() + " de " + c.get_spanish_suit() + "        (" + c.get_english_rank() + " of " + c.get_english_suit() + ")";
     cards.push_back(new_card);
     cout << "        " << new_card << endl;
+    
+    int x = c.get_rank();
+    total = total + calc_value(x);
 }
 
 void Hand::return_cards() const
@@ -207,9 +207,19 @@ void Hand::return_cards() const
     }
 }
 
-void Hand::return_total() const
+double Hand::calc_value(int x)
 {
-    cout << total;
+    double value = 0.0;
+    if (x <=7)
+    {value = x; }
+    else if (x == (10)||(11)||(12))
+    {value = 0.5; }
+    return value;
+}
+
+double Hand::return_total() const
+{
+    return total;
 }
 
 
