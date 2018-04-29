@@ -10,10 +10,7 @@
 using namespace std;
 
 // Global constants (if any)
-int money = 100;
 Player p1(100);
-Hand player;
-Hand dealer;
 int bet;
 char c;
 
@@ -25,70 +22,82 @@ char c;
 // Stub for main
 int main()
 {
-    //Player's hand
-    cout << "You have $" << p1.get_money() << ". Enter bet: ";
-    cin >> bet;
-    if (bet > p1.get_money())
+    while (p1.get_money() > 0)
     {
-        cout << "Not Possible! Enter bet: ";
+        Hand player;
+        Hand dealer;
+    
+        //Player's hand
+        cout << "You have $" << p1.get_money() << ". Enter bet: ";
         cin >> bet;
-    }
-    
-    bool more = true;
-    cout << "Your cards:" << endl;
-    player.return_first_card();
-    
-    while (more)
-    {
-        cout << "Your total is " << player.return_total() << ". Do you want another card (y/n)? ";
-        cin >> c;
-        if ( c != 'y')
-            {more = false;}
-        else
-        {   cout << "New card:" << endl;
-            player.new_card();
-            cout << "\n";
-            cout << "Your cards:" << endl;
-            player.return_cards();
+        if (bet > p1.get_money())
+        {
+            cout << "Not Possible! Enter bet: ";
+            cin >> bet;
         }
-    }
     
-    //Dealer's hand
-    bool more2 = true;
-    cout << "Dealer's cards: ";
-    dealer.return_first_card();
+        bool more = true;
+        cout << "Your cards:" << endl;
+        player.return_first_card();
     
-    while (more2)
-    {
-        cout << "The dealer's total is " << dealer.return_total() << "." << endl;
-        cout << "\n";
-        if ( dealer.return_total() > 5.5)
-            {more2 = false;}
+        while (more)
+        {
+            cout << "Your total is " << player.return_total() << ". Do you want another card (y/n)? ";
+            cin >> c;
+            if ( c != 'y')
+            {more = false;}
+            else
+            {   cout << "New card:" << endl;
+                player.new_card();
+                cout << "\n";
+                cout << "Your cards:" << endl;
+                player.return_cards();
+            }
+        }
+    
+        //Dealer's hand
+        bool more2 = true;
+        cout << "Dealer's cards: ";
+        dealer.return_first_card();
+    
+        while (more2)
+        {
+            cout << "The dealer's total is " << dealer.return_total() << "." << endl;
+            cout << "\n";
+            if ( dealer.return_total() > 5.5)
+                {more2 = false;}
+            else
+            {
+                cout << "New card:" << endl;
+                dealer.new_card();
+                cout << "\n";
+                cout << "Dealer's card:" << endl;
+                dealer.return_cards();
+            }
+        }
+    
+        if (player.return_total() > dealer.return_total() && player.return_total() <= 7.5)
+        {
+            cout << "You win " << bet << "." << endl;
+            cout << "\n";
+            p1.change_money(bet);
+        }
+        else if (player.return_total() == dealer.return_total() && player.return_total() <= 7.5)
+        {
+            cout << "Nobody wins!" << endl;
+            cout << "\n";
+        }
         else
         {
-            cout << "New card:" << endl;
-            dealer.new_card();
+            cout << "Too bad. You lose " << bet << "." << endl;
             cout << "\n";
-            cout << "Dealer's card:" << endl;
-            dealer.return_cards();
+            p1.change_money(-bet);
         }
     }
     
-    if (player.return_total() > dealer.return_total() && player.return_total() <= 7.5)
-    {
-        cout << "You win " << bet << "." << endl;
-        cout << "\n";
-    }
-    else if (player.return_total() == dealer.return_total() && player.return_total() <= 7.5)
-    {
-        cout << "Nobody wins!" << endl;
-        cout << "\n";
-    }
-    else
-    {
-        cout << "Too bad. You lose " << bet << "." << endl;
-        cout << "\n";
-    }
-    
+    cout << "You have $0. GAME OVER!" << endl;
+    cout << "Come back when you have more money." << endl;
+    cout << "\n";
+    cout << "Bye!" << endl;
     return 0;
 }
