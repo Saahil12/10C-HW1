@@ -75,7 +75,7 @@ private:
     // You decide what fields you'll need...
     double total;
     string first_card;
-    vector <string> cards;
+    vector <Card> cards;
 };
 
 //Just need to keep track of the amount of money a player has

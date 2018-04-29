@@ -74,7 +74,7 @@ int main()
         }
     }
     
-    if (player.return_total() < dealer.return_total() && player.return_total() <= 7.5)
+    if (player.return_total() > dealer.return_total() && player.return_total() <= 7.5)
     {
         cout << "You win " << bet << "." << endl;
         cout << "\n";

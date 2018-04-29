@@ -175,15 +175,17 @@ bool Card::operator < (Card card2) const {
 Hand::Hand()
 {
     Card c;
-    first_card = c.get_spanish_rank() + " de " + c.get_spanish_suit() + "        (" + c.get_english_rank() + " of " + c.get_english_suit() + ")";
+    //first_card = c.get_spanish_rank() + " de " + c.get_spanish_suit() + "        (" + c.get_english_rank() + " of " + c.get_english_suit() + ")";
     
-    cards.push_back(first_card);
+    cards.push_back(c);
     int x = c.get_rank();
     total = calc_value(x);
 }
 
 void Hand::return_first_card() const
 {
+    string first_card;
+    first_card = cards[0].get_spanish_rank() + " de " + cards[0].get_spanish_suit() + "        (" + cards[0].get_english_rank() + " of " + cards[0].get_english_suit() + ")";
     cout << "        " << first_card << endl;
 }
 
@@ -192,7 +194,7 @@ void Hand::new_card()
     Card c;
     string new_card;
     new_card = c.get_spanish_rank() + " de " + c.get_spanish_suit() + "        (" + c.get_english_rank() + " of " + c.get_english_suit() + ")";
-    cards.push_back(new_card);
+    cards.push_back(c);
     cout << "        " << new_card << endl;
     
     int x = c.get_rank();
@@ -203,7 +205,7 @@ void Hand::return_cards() const
 {
     for (int i=0; i<cards.size(); i++)
     {
-        cout << "        " << cards[i] << endl;
+        cout << "        " << cards[i].get_spanish_rank() + " de " + cards[i].get_spanish_suit() + "        (" + cards[i].get_english_rank() + " of " + cards[i].get_english_suit() + ")" << endl;
     }
 }
 
