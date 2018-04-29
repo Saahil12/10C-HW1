@@ -196,6 +196,17 @@ void Hand::new_card()
     new_card = c.get_spanish_rank() + " de " + c.get_spanish_suit() + "        (" + c.get_english_rank() + " of " + c.get_english_suit() + ")";
     cards.push_back(c);
     cout << "        " << new_card << endl;
+   
+    for (int i=0; i < cards.size(); i++)
+    {
+        while (c < cards[i])
+        {
+            Card c2 = cards[i];
+            cards[i] = c;
+            c = c2;
+            
+        }
+    }
     
     int x = c.get_rank();
     total = total + calc_value(x);
