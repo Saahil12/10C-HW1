@@ -174,11 +174,11 @@ bool Card::operator < (Card card2) const {
 // Implemente the member functions of the Hand class here.
 Hand::Hand()
 {
-    Card c;
+    Card c1;
     //first_card = c.get_spanish_rank() + " de " + c.get_spanish_suit() + "        (" + c.get_english_rank() + " of " + c.get_english_suit() + ")";
     
-    cards.push_back(c);
-    int x = c.get_rank();
+    cards.push_back(c1);
+    int x = c1.get_rank();
     total = calc_value(x);
 }
 
@@ -194,9 +194,25 @@ void Hand::new_card()
     Card c;
     string new_card;
     new_card = c.get_spanish_rank() + " de " + c.get_spanish_suit() + "        (" + c.get_english_rank() + " of " + c.get_english_suit() + ")";
-    cards.push_back(c);
     cout << "        " << new_card << endl;
     
+    //sorting cards in hand
+    int pos;
+    for (int i=0; i < cards.size(); i++)
+    {
+        if (cards[i] < c)
+        {
+            pos = i+1;
+        }
+    }
+    
+    int last = cards.size()-1;
+    cards.push_back(cards[last]);
+    for (int j=last; j>pos; j--)
+        cards[j] = cards[j-1];
+    cards[pos] = c;
+    
+    //calc total value of hand
     int x = c.get_rank();
     total = total + calc_value(x);
 }
