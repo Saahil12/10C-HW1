@@ -82,6 +82,14 @@ int main()
             cout << "\n";
             p1.change_money(bet);
         }
+        
+        if (dealer.return_total() > 7.5 && player.return_total() <= 7.5)
+        {
+            cout << "You win " << bet << "." << endl;
+            cout << "\n";
+            p1.change_money(bet);
+        }
+        
         else if (player.return_total() == dealer.return_total() && player.return_total() <= 7.5)
         {
             cout << "Nobody wins!" << endl;

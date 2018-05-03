@@ -16,3 +16,9 @@ The following code consits of three files: **cards.h**, **cards.cpp**, and **sie
 * **cards.h** : header file consisiting of the 3 class declerations.
 * **cards.cpp** : file consisiting of all header function definitions
 * **siete-y-medio.cpp** : source file where main routine lives and plays *siete y medio*.
+
+## Documentation:
+Used two repositories to 
+
+
+
