@@ -18,7 +18,7 @@ The following code consits of three files: **cards.h**, **cards.cpp**, and **sie
 * **siete-y-medio.cpp** : source file where main routine lives and plays *siete y medio*.
 
 ## Documentation:
-Used two repositories to 
+Used two branches, master and experimental to produce code. Used experimental branch to sort cards in order in the Hand class. While working on the experimental branch, I worked on int main() on master branch to have game run more than one round. Then I merged experimental branch into mastr producing a non-fast-forward merge 
 
 
 
